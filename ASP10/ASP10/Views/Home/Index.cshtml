@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    var vote = ViewBag.Vote;
+}
+@model IEnumerable<DataWork.Models.Article>
+
+@foreach (var item in Model)
+{
+    <p>@item.Name</p>
+    <p>@item.Text</p>
+    @Html.ActionLink("More", "More", new { Id = item.Id }, new { target = "_blank" });
+}
+
+
+@section Vote {
+
+    @using (Html.BeginForm("Vote", "Home", FormMethod.Post))
+    {
+        for (int i = 0; i < vote.Popular.Length; i++)
+        {
+            <input type="radio" name="RadioChose" value="@i" checked="checked" /> @vote.Article[i].Name
+            <p>Scores @vote.Popular[i]</p>
+        }
+        <input type="submit" value="Send" />
+    }
+}

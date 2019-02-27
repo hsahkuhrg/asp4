@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model IEnumerable<DataWork.Models.Respons>
+
+@foreach (var a in Model)
+{
+    <p>@a.Name</p>
+    <p>@a.Date</p>
+    <p>@a.Row</p>
+}
+
+@using (Html.BeginForm("About", "Article", FormMethod.Post))
+{
+    <p>Введите свое имя: </p>
+    @Html.TextBox("Name", "Введите имя")
+    <p>Введите строку :</p>
+    @Html.TextBox("Row")
+    <p><input type="submit" value="Отправить" /></p>
+}

@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "View1";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+}
+@model IEnumerable<DataWork.Models.Form>
+
+@helper List(IEnumerable<DataWork.Models.Form> vs)
+{
+    <ul>
+        @foreach (var b in vs)
+        {
+            <li>@b.Name</li>
+            <li>@b.Answer1</li>
+            if (b.Answer2 != null)
+            {
+                <li>@b.Answer2</li>
+            }
+            if (b.Answer3 != null)
+            {
+                <li>@b.Answer3</li>
+            }
+            if (b.Answer4 != null)
+            {
+                <li>@b.Answer4</li>
+            }
+
+        }
+    </ul>
+}
+
+@List(Model)

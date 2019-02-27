@@ -1,0 +1,12 @@
+﻿@model ASP10.Models.Vote
+
+@using (Html.BeginForm("Vote", "Home", FormMethod.Post))
+{
+    for(int i = 0; i < Model.Popular.Length; i++)
+    {
+        <input type="radio" name="RadioChose" value="@Model.Article[i].Id" checked="checked"/> @Model.Article[i].Name 
+        <p>Scores @Model.Popular[i]</p>
+    }
+    <input type="submit" value="Send"/>
+}
+

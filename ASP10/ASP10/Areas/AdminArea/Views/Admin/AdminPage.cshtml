@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AdminPage", "Admin", FormMethod.Post))
+{
+    <p>Введите свое имя: </p>
+    @Html.Editor("Name")
+    <p>Введите строку :</p>
+    @Html.Editor("Text")
+    <p>Выберите teg</p>
+    <select name="Id" multiple="multiple">
+        <option value="1">vvv</option>
+        <option value="2">mmm</option>
+        <option value="3">nnn</option>
+    </select>
+    <p><input type="submit" value="Отправить" /></p>
+}

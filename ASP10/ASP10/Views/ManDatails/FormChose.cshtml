@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Contact", "ManDatails", FormMethod.Post))
+{
+    <p>Введите свое имя: </p>
+    @Html.TextBox("Name", "Введите имя")
+    <p>val1</p>
+    <input name="answer1" type="radio" value="val1" />
+    <p>val2</p>
+    <input name="answer1" type="radio" value="val2" />
+    <p>val3</p>
+    <input name="answer1" type="radio" value="val3" />
+    <p>val1</p>
+    <input name="answer2" type="checkbox" value="val1" />
+    <p>val2</p>
+    <input name="answer3" type="checkbox" value="val2" />
+    <p>val3</p>
+    <input name="answer4" type="checkbox" value="val3" />
+    <p><input type="submit" value="Отправить" /></p>
+}

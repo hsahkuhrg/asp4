@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "More";
+}
+
+@model DataWork.Models.Article
+
+@Html.DisplayFor(m => m.Name)
+<br />
+@Html.DisplayFor(m => m.Text)
+<br />
+@foreach (var a in Model.Tegs)
+{
+    @a.Name
+    <br />
+}

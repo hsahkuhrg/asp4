@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet">
+    <title>@ViewBag.Title – приложение ASP.NET</title>
+</head>
+<body>
+
+    <header>
+        <p>Task1</p>
+        <img src="@Url.Content("~/Photo/photo.jpg")" />
+    </header>
+    <div class="N">
+        <nav>
+            <ul>
+                <li><a href="/Home/Index" )"> Main</a></li>
+                <li><a href="/Article/About"> Guest</a></li>
+                <li><a href="/ManDatails/Contact"> Anketa</a></li>
+                <li>@Html.ActionLink("Зарегатся", "Register", new { area = "AdminArea", controller = "Account" })</li>
+                <li>@Html.ActionLink("Войти", "Login", new { area = "AdminArea", controller = "Account" })</li>
+                <li>@Html.ActionLink("AdminPage", "AdminPage", new { area = "AdminArea", controller = "Admin" })</li>
+                <li>@Html.ActionLink("Logout", "Logout", new { area = "AdminArea", controller = "Account" })</li>
+            </ul>
+            @RenderSection("Vote", false)
+        </nav>
+        <main>
+            @RenderBody()
+        </main>
+        <footer>
+            <p>Eghjhrgjrtjgkr</p>
+            <a href="#">Back to top</a>
+        </footer>
+    </div>
+</body>
+</html>
